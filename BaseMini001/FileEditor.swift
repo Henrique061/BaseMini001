@@ -15,7 +15,7 @@ class FileEditor {
             .appendingPathComponent("SystemData")
             .appendingPathComponent("magias")
             .appendingPathComponent(name)
-            .appendingPathExtension("txt")
+            .appendingPathExtension("json")
         
         return fileDir.path
     }
@@ -26,7 +26,7 @@ class FileEditor {
             .appendingPathComponent("SystemData")
             .appendingPathComponent("magias")
             .appendingPathComponent(name)
-            .appendingPathExtension("txt")
+            .appendingPathExtension("json")
         
         return fileDir
     }
@@ -48,6 +48,7 @@ class FileEditor {
     }
     
     public static func createFile(data: Data, file: String) -> Bool {
+        
         return FileManager.default.createFile(atPath: file, contents: data)
     }
     

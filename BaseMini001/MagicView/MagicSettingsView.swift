@@ -38,7 +38,17 @@ struct MagicSettingsView: View {
                         .padding()
                 }
                 
-                
+                Button {
+                    if MagicUtils.createNewMagic(magic: magic) {
+                        savedMagicAlert.toggle()
+                        magics = MagicUtils.fetch()
+                    } else {
+                        saveMagicFailAlert.toggle()
+                    }
+                } label: {
+                    Text("CRIAR MAGIA")
+                        .padding()
+                }
             }.padding()
             
         }

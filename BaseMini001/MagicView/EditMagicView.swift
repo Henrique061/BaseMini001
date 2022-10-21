@@ -15,6 +15,11 @@ struct EditMagicView: View {
         VStack {
             Text("\(MagicUtils.folderPath)")
                 .textSelection(.enabled)
+            HStack {
+                Picker("ID", selection: $magic.id) {
+                    
+                }
+            }
             MagicInfoTextFieldsView(magic: $magic)
             HStack {
                 LevelListView(magic: $magic)

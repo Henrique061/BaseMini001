@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CharClass: String, Codable, Hashable {
+public enum CharClass: String, Codable, Hashable {
     case barbaro = "Bárbaro"
     case bardo = "Bardo"
     case bruxo = "Bruxo"
@@ -22,7 +22,7 @@ enum CharClass: String, Codable, Hashable {
     case patrulheiro = "Patrulheiro"
 }
 
-enum MagicSchool: String, Codable, Hashable {
+public enum MagicSchool: String, Codable, Hashable {
     case abjuracao = "Abjuração"
     case adivinhacao = "Adivinhação"
     case conjuracao = "Conjuração"
@@ -33,7 +33,7 @@ enum MagicSchool: String, Codable, Hashable {
     case transmutacao = "Transmutação"
 }
 
-struct Magic: Codable, Hashable {
+public struct Magic: Codable, Hashable {
     var id: Int
     var name: String
     var level: Int
@@ -51,16 +51,16 @@ struct Magic: Codable, Hashable {
     }
 }
 
-struct MagicJSON: Codable {
-    var id: Int
-    var nome: String
-    var nivel: Int
-    var ritual: Bool
-    var classes: [String]
-    var escola: String
-    var tempo: String
-    var alcance: String
-    var componentes: String
-    var duracao: String
-    var descricao: String
+public struct MagicJSON: Codable {
+    public var id: Int
+    public var nome: String
+    public var nivel: Int
+    public var classes: [CharClass]
+    public var escola: MagicSchool
+    public var ritual: Bool
+    public var tempoConjuracao: String
+    public var alcance: String
+    public var componentes: String
+    public var duracao: String
+    public var descricao: String
 }
